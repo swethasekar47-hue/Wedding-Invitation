@@ -314,6 +314,23 @@
         document.addEventListener("visibilitychange", () => {
             if (document.hidden) {
                 music.pause();
+                music.currentTime = 0;
+
+                // Clear media session notification
+                if ("mediaSession" in navigator) {
+                    navigator.mediaSession.playbackState = "none";
+                    navigator.mediaSession.metadata = null;
+                }
+            }
+        });
+
+        window.addEventListener("pagehide", () => {
+            music.pause();
+            music.currentTime = 0;
+
+            if ("mediaSession" in navigator) {
+                navigator.mediaSession.playbackState = "none";
+                navigator.mediaSession.metadata = null;
             }
         });
     </script>
