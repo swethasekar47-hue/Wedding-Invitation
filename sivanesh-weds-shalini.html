@@ -310,6 +310,12 @@
         document.addEventListener("click", () => {
             music.play();
         }, { once: true });
+
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+                music.pause();
+            }
+        });
     </script>
 </body>
 
