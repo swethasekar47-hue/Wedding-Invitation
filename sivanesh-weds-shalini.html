@@ -29,6 +29,8 @@
         <img src="img/flower.png" class="petal">
         <img src="img/purple flower.png" class="petal">
         <img src="img/flower.png" class="petal">
+        <img src="img/flower.png" class="petal">
+        <img src="img/purple flower.png" class="petal">
     </div>
 
     <div class="card">
@@ -139,7 +141,7 @@
 
                 <div class="details">
                     <p>நாள்: வியாழக்கிழமை, 17-ஆம் தேதி, செப்டம்பர் 2026</p>
-                    <p>நேரம்: காலை 6:00 மணி முதல் 7:30 மணி வரை</p>
+                    <p>நேரம்: காலை 9:00 மணி முதல் 10:00 மணி வரை</p>
                 </div>
 
                 <div class="venue">
@@ -295,6 +297,20 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
+    <audio id="bgMusic" autoplay loop>
+        <source src="audio/wedding-music.mpeg" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const music = document.getElementById("bgMusic");
+
+        music.volume = 0.01; // Start at 10% volume
+
+        document.addEventListener("click", () => {
+            music.play();
+        }, { once: true });
+    </script>
 </body>
 
 </html>
